@@ -57,6 +57,8 @@ numpy (for easy operation of array)
 
 ##### Result 结果
 
-White background 白底 <img src="examples/out.png" style="width:200px;background: white" />
+<img src="examples/out.png" style="width:200px;background: white" />
 
-Black background 黑底 <img src="examples/out.png" style="width:200px;background: black" />
+You can download this image to see the effect. Or "open in new tab" should give the black background effect.
+
+下载原图或者在新标签页打开(chrome)以查看黑底效果。
