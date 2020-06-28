@@ -47,3 +47,16 @@ To conclude, the process of merging two images into a Shadow Tank image is the f
 ### Dependencies 依赖项
 
 numpy (for easy operation of array)
+
+### Examples 演示结果
+
+##### Original images 原图
+
+<img src="examples/white.png" style="width:200px;" />
+<img src="examples/black.png" style="width:200px;" />
+
+##### Result 结果
+
+White background 白底 <img src="examples/out.png" style="width:200px;background: white" />
+
+Black background 黑底 <img src="examples/out.png" style="width:200px;background: black" />
