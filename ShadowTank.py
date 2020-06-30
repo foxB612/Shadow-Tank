@@ -13,14 +13,12 @@ def resize(img1, img2):
 
 def RGB2Gray(bmp):
 	r,g,b = np.split(bmp, 3, axis=2)
-	t = r * 0.299 + g * 0.587 + b * 0.114
-	gray = np.array(t, dtype=np.uint8).squeeze(2)
+	gray = (r * 0.299 + g * 0.587 + b * 0.114).astype(np.uint8).squeeze(2)
 	return gray
 
 def RGBA2Gray(bmp):
 	r,g,b,a = np.split(bmp, 4, axis=2)
-	t = r * 0.299 + g * 0.587 + b * 0.114
-	gray = np.array(t, dtype=np.uint8).squeeze(2)
+	gray = (r * 0.299 + g * 0.587 + b * 0.114).astype(np.uint8).squeeze(2)
 	return gray
 
 def process(g1, g2):
@@ -56,8 +54,7 @@ def main(path1, path2, outputPath):
 	g1, g2 = process(g1, g2)
 
 	alpha = 255 - (g1 - g2)
-	color = np.divide(g2, alpha / 255, out=np.zeros(g2.shape), where=alpha!=0)
-	color = np.array(color, dtype=np.uint8)
+	color = np.divide(g2, alpha / 255, out=np.zeros(g2.shape), where=alpha!=0).astype(np.uint8)
 	o = np.stack([color, color, color, alpha], axis=2)
 	out = Image.fromarray(o, mode="RGBA")
 	out.save(outputPath)
